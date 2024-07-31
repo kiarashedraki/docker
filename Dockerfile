@@ -1,8 +1,11 @@
-# Use the official Nginx image from the Docker Hub
-FROM nginx:alpine
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
 
-# Copy a custom HTML file to the default Nginx directory
-COPY index.html /usr/share/nginx/html/index.html
+# Set the working directory in the container
+WORKDIR /usr/src/app
 
-# Expose port 80 to allow traffic
-EXPOSE 80
+# Copy the current directory contents into the container at /usr/src/app
+COPY . .
+
+# Run the Python script
+CMD ["python", "-c", "print('Hello, World!')"]
