@@ -1,0 +1,1 @@
+gcloud compute disks create [DISK_NAME] --size=[DISK_SIZE] --zone=[ZONE] --type=pd-standard
